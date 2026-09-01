@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pratyush Mishra — Full-Stack Developer</title>
+<meta name="description" content="Portfolio of Pratyush Mishra, Computer Science Engineering student at Lovely Professional University building real-time full-stack web applications with the MERN stack.">
+<meta name="author" content="Pratyush Mishra">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Pratyush Mishra — Full-Stack Developer">
+<meta property="og:description" content="Full-stack developer building real-time web applications. CSE student at Lovely Professional University.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/profile.png">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%232FE0C0%22>P</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- 3D particle network background (rendered by Three.js, see js/script.js) -->
+<canvas id="bg3d" aria-hidden="true"></canvas>
+<!-- Film-grain texture overlay for a premium finish -->
+<div class="grain-overlay" aria-hidden="true"></div>
+<!-- Cursor-following glow, active over the hero -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+<!-- Scroll progress indicator -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- ============ NAVIGATION ============ -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">PM<span class="dot">.</span></a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#credentials" class="nav-link">Credentials</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <a href="assets/Pratyush-Mishra-Resume.pdf" download class="btn btn-ghost nav-cta">Resume</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-text fade-in">
+        <p class="eyebrow mono">// full-stack developer</p>
+        <h1 class="hero-title">
+          Hi, I'm <span class="accent-text">Pratyush Mishra</span>
+        </h1>
+        <p class="hero-role mono"><span id="typed"></span><span class="cursor">|</span></p>
+        <p class="hero-desc">
+          Computer Science Engineering student at Lovely Professional University, building
+          real-time, full-stack web applications with the MERN stack — from live video
+          classrooms to collaborative editors. Alongside engineering, I run creative and
+          entrepreneurial ventures reaching thousands of people.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="assets/Pratyush-Mishra-Resume.pdf" download class="btn btn-outline">Download Resume</a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://github.com/mishrapratyushms" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.42 7.86 10.95.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.63 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.67.8.56A10.51 10.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/pratyushhhmishra/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.15 1.45-2.15 2.94v5.66H9.35V9h3.41v1.56h.05c.47-.89 1.63-1.85 3.35-1.85 3.59 0 4.25 2.36 4.25 5.43v6.31ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
+          </a>
+          <a href="mailto:mishrapratyushms@gmail.com" aria-label="Send email">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M1.5 4.5h21a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-21a1 1 0 0 1-1-1v-13a1 1 0 0 1 1-1Zm1.8 2 8.7 6.4 8.7-6.4H3.3Zm17.7 1.63-8.36 6.15a1 1 0 0 1-1.18 0L2.5 8.13V17.5h18.5V8.13Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap fade-in">
+        <div class="waveform" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="photo-ring tilt">
+          <img src="assets/profile.png" alt="Portrait of Pratyush Mishra" class="hero-photo" width="420" height="420">
+        </div>
+        <div class="photo-badge mono">B.Tech CSE · CGPA 8.7</div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <p class="section-eyebrow mono">01 · About</p>
+      <h2 class="section-title fade-in">A builder with two lanes: <span class="accent-text">code</span> and <span class="accent-text">ventures</span>.</h2>
+
+      <div class="about-grid">
+        <div class="about-copy fade-in">
+          <p>
+            I'm a Computer Science Engineering student at <strong>Lovely Professional University</strong>,
+            Phagwara, currently maintaining a CGPA of <strong>8.7</strong>. My focus is building
+            real-time, full-stack web products — from a WebRTC-powered virtual classroom to a
+            collaborative live-editing notepad — using the MERN stack, PHP/MySQL, and WebSocket
+            technologies.
+          </p>
+          <p>
+            Outside of engineering, I've spent years building an audience and running businesses:
+            I've voiced content for YouTube creators with millions of subscribers, grown my own
+            gaming channel past 20,000 subscribers, and started a hotel and a travel agency from
+            the ground up. That mix has sharpened how I think about problem solving, communication,
+            time management, and adaptability — skills I bring directly into how I build software.
+          </p>
+          <p>
+            I'm currently looking for internship, placement, and freelance opportunities where I
+            can apply full-stack development skills to real, high-impact products.
+          </p>
+        </div>
+
+        <div class="about-stats fade-in">
+          <div class="stat-card tilt">
+            <span class="stat-number mono">8.7</span>
+            <span class="stat-label">CGPA in B.Tech CSE</span>
+          </div>
+          <div class="stat-card tilt">
+            <span class="stat-number mono">3</span>
+            <span class="stat-label">Full-stack projects shipped</span>
+          </div>
+          <div class="stat-card tilt">
+            <span class="stat-number mono">200+</span>
+            <span class="stat-label">Coding problems solved</span>
+          </div>
+          <div class="stat-card tilt">
+            <span class="stat-number mono">20K+</span>
+            <span class="stat-label">YouTube subscribers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="section" id="skills">
+    <div class="section-inner">
+      <p class="section-eyebrow mono">02 · Skills</p>
+      <h2 class="section-title fade-in">Technical Skills</h2>
+
+      <div class="marquee fade-in" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Python</span><span>JavaScript</span><span>React.js</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>MySQL</span><span>WebRTC</span><span>Socket.io</span><span>PHP</span><span>C++</span><span>Tailwind CSS</span><span>Git</span><span>Figma</span>
+          <span>Python</span><span>JavaScript</span><span>React.js</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>MySQL</span><span>WebRTC</span><span>Socket.io</span><span>PHP</span><span>C++</span><span>Tailwind CSS</span><span>Git</span><span>Figma</span>
+        </div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-category fade-in tilt">
+          <h3 class="skill-cat-title">Languages</h3>
+          <div class="badge-row">
+            <span class="badge">Python</span>
+            <span class="badge">JavaScript</span>
+            <span class="badge">C</span>
+            <span class="badge">C++</span>
+            <span class="badge">PHP</span>
+            <span class="badge">DSA</span>
+          </div>
+        </div>
+
+        <div class="skill-category fade-in tilt">
+          <h3 class="skill-cat-title">Web Technologies</h3>
+          <div class="badge-row">
+            <span class="badge">HTML</span>
+            <span class="badge">CSS</span>
+            <span class="badge">React.js</span>
+            <span class="badge">Node.js</span>
+            <span class="badge">Express.js</span>
+            <span class="badge">Tailwind CSS</span>
+            <span class="badge">WebRTC</span>
+            <span class="badge">Socket.io</span>
+          </div>
+        </div>
+
+        <div class="skill-category fade-in tilt">
+          <h3 class="skill-cat-title">Databases &amp; Tools</h3>
+          <div class="badge-row">
+            <span class="badge">MySQL</span>
+            <span class="badge">MongoDB</span>
+            <span class="badge">Git</span>
+            <span class="badge">GitHub</span>
+            <span class="badge">Figma</span>
+          </div>
+        </div>
+
+        <div class="skill-category fade-in tilt">
+          <h3 class="skill-cat-title">Soft Skills</h3>
+          <div class="badge-row">
+            <span class="badge badge-soft">Problem Solving</span>
+            <span class="badge badge-soft">Communication</span>
+            <span class="badge badge-soft">Time Management</span>
+            <span class="badge badge-soft">Adaptability</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="section section-alt" id="experience">
+    <div class="section-inner">
+      <p class="section-eyebrow mono">03 · Experience</p>
+      <h2 class="section-title fade-in">Experience &amp; Ventures</h2>
+      <p class="section-sub fade-in">Alongside my engineering work, I've built an audience and run two businesses from scratch.</p>
+
+      <div class="exp-grid">
+        <div class="exp-card fade-in tilt">
+          <div class="exp-icon" aria-hidden="true">🎙️</div>
+          <span class="exp-date mono">Jun 2022 — Jul 2026</span>
+          <h3>Voice Over Artist</h3>
+          <p class="exp-org">YouTube</p>
+          <ul>
+            <li>Worked with popular YouTube creators as a voice over artist, including a creator with 10M subscribers (Decor Gaming).</li>
+            <li>Provided lead dubbing for well-known fan-made anime series.</li>
+          </ul>
+        </div>
+
+        <div class="exp-card fade-in tilt">
+          <div class="exp-icon" aria-hidden="true">🎮</div>
+          <span class="exp-date mono">Jan 2023 — Jul 2026</span>
+          <h3>Gaming Videos Creator</h3>
+          <p class="exp-org">YouTube · Pratyush YT</p>
+          <ul>
+            <li>Built a gaming YouTube channel with 500+ videos and 20,000+ subscribers.</li>
+            <li>Streamed 200+ hours of content on the channel.</li>
+          </ul>
+        </div>
+
+        <div class="exp-card fade-in tilt">
+          <div class="exp-icon" aria-hidden="true">🏨</div>
+          <span class="exp-date mono">Jan 2025 — Mar 2025</span>
+          <h3>Hotel Business</h3>
+          <p class="exp-org">Ganga Lounge and Hotels</p>
+          <ul>
+            <li>Opened a fully functional hotel in Prayagraj, UP during Mahakumbh Mela 2025.</li>
+            <li>Handled all hotel functions, building the operation from scratch and making it profitable within a week.</li>
+          </ul>
+        </div>
+
+        <div class="exp-card fade-in tilt">
+          <div class="exp-icon" aria-hidden="true">✈️</div>
+          <span class="exp-date mono">Dec 2024 — Jul 2025</span>
+          <h3>Travel Agency</h3>
+          <p class="exp-org">Mishra Tour and Travels</p>
+          <ul>
+            <li>Built a travel agency from scratch, collaborating with 20+ hotels across India.</li>
+            <li>Successfully handled 500+ trips for travellers from different states of India.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <p class="section-eyebrow mono">04 · Projects</p>
+      <h2 class="section-title fade-in">Projects</h2>
+
+      <div class="project-grid">
+        <article class="project-card fade-in tilt">
+          <div class="project-top">
+            <h3>Virtual Classroom Platform</h3>
+            <span class="project-date mono">Dec 2025 — Jan 2026</span>
+          </div>
+          <ul class="project-points">
+            <li>Architected a real-time virtual classroom using WebRTC and Socket.io, supporting up to 10 concurrent users with low-latency audio/video communication per session.</li>
+            <li>Engineered an assignment workflow handling 30+ student submissions per course, including file uploads, deadline tracking, and instructor reviews.</li>
+            <li>Secured 20+ learning-content resources using role-based access control across student and instructor roles.</li>
+            <li>Developed dual dashboards for both user roles, organizing classes, tasks, announcements and shared materials in one platform.</li>
+          </ul>
+          <div class="badge-row">
+            <span class="badge badge-sm">MongoDB</span>
+            <span class="badge badge-sm">Express.js</span>
+            <span class="badge badge-sm">React.js</span>
+            <span class="badge badge-sm">Node.js</span>
+            <span class="badge badge-sm">WebRTC</span>
+            <span class="badge badge-sm">Tailwind CSS</span>
+          </div>
+          <a href="https://github.com/mishrapratyushms" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
+        </article>
+
+        <article class="project-card fade-in tilt">
+          <div class="project-top">
+            <h3>Learning Management System (LMS)</h3>
+            <span class="project-date mono">Sep 2025 — Oct 2025</span>
+          </div>
+          <ul class="project-points">
+            <li>Built a scalable full-stack LMS supporting 100+ users and 10+ courses concurrently across platforms.</li>
+            <li>Integrated secure authentication using Clerk with two user roles and robust session management.</li>
+            <li>Validated Stripe payments with 50+ successful test transactions across course checkout scenarios.</li>
+            <li>Created 20+ REST APIs for users, courses, and enrollments using a Node.js + Express.js backend.</li>
+          </ul>
+          <div class="badge-row">
+            <span class="badge badge-sm">MongoDB</span>
+            <span class="badge badge-sm">Express.js</span>
+            <span class="badge badge-sm">React.js</span>
+            <span class="badge badge-sm">Node.js</span>
+            <span class="badge badge-sm">Clerk API</span>
+            <span class="badge badge-sm">Stripe API</span>
+          </div>
+          <a href="https://github.com/mishrapratyushms" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
+        </article>
+
+        <article class="project-card fade-in tilt">
+          <div class="project-top">
+            <h3>Collaborative Online Notepad</h3>
+            <span class="project-date mono">Feb 2025 — Mar 2025</span>
+          </div>
+          <ul class="project-points">
+            <li>Spearheaded a real-time collaborative editor enabling 2+ users to edit the same document simultaneously without conflicts.</li>
+            <li>Implemented real-time sync using Ratchet, achieving update latency under 1 second across sessions.</li>
+            <li>Embedded secure authentication and persistent file storage for reliable, uninterrupted sessions.</li>
+            <li>Optimized MySQL queries and server-side logic, improving response times by ~30% for core operations.</li>
+          </ul>
+          <div class="badge-row">
+            <span class="badge badge-sm">PHP</span>
+            <span class="badge badge-sm">MySQL</span>
+            <span class="badge badge-sm">HTML</span>
+            <span class="badge badge-sm">CSS</span>
+            <span class="badge badge-sm">JavaScript</span>
+            <span class="badge badge-sm">WebSocket (Ratchet)</span>
+          </div>
+          <a href="https://github.com/mishrapratyushms" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CERTIFICATIONS & ACHIEVEMENTS ============ -->
+  <section class="section section-alt" id="credentials">
+    <div class="section-inner">
+      <p class="section-eyebrow mono">05 · Credentials</p>
+      <h2 class="section-title fade-in">Certifications &amp; Achievements</h2>
+
+      <div class="credentials-grid">
+        <div class="credential-col fade-in">
+          <h3 class="cred-col-title">Certifications</h3>
+          <ul class="cred-list">
+            <li>
+              <span class="cred-name">Master Generative AI and Generative AI Tools including ChatGPT</span>
+              <span class="cred-meta mono">Udemy · Aug 2025</span>
+            </li>
+            <li>
+              <span class="cred-name">The Bits and Bytes of Computer Networking</span>
+              <span class="cred-meta mono">Coursera · Sep 2024</span>
+            </li>
+            <li>
+              <span class="cred-name">Software Development Processes and Methodologies</span>
+              <span class="cred-meta mono">Coursera · May 2024</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="credential-col fade-in">
+          <h3 class="cred-col-title">Achievements</h3>
+          <ul class="cred-list">
+            <li>
+              <span class="cred-name">Solved 200+ programming problems on online coding platforms through regular practice.</span>
+            </li>
+            <li>
+              <span class="cred-name">Achieved the LeetCode 100 Days Badge for consistent daily problem solving.</span>
+            </li>
+            <li>
+              <span class="cred-name">Ranked Top 10 among 50+ teams in a college hackathon with an innovative web solution prototype.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section class="section section-alt" id="education">
+    <div class="section-inner">
+      <p class="section-eyebrow mono">06 · Education</p>
+      <h2 class="section-title fade-in">Education</h2>
+
+      <div class="timeline">
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card tilt">
+            <span class="timeline-date mono">Aug 2025 — Present</span>
+            <h3>Bachelor of Technology, Computer Science &amp; Engineering</h3>
+            <p class="timeline-org">Lovely Professional University · Phagwara, Punjab</p>
+            <p class="timeline-detail">CGPA: 8.7</p>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card tilt">
+            <span class="timeline-date mono">May 2021 — Mar 2023</span>
+            <h3>Higher Secondary Education</h3>
+            <p class="timeline-org">RRB Convent School · Prayagraj, Uttar Pradesh</p>
+            <p class="timeline-detail">Percentage: 97.1%</p>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card tilt">
+            <span class="timeline-date mono">Jun 2020 — Mar 2021</span>
+            <h3>Secondary Education</h3>
+            <p class="timeline-org">RRB Convent School · Prayagraj, Uttar Pradesh</p>
+            <p class="timeline-detail">Percentage: 99.7%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESUME CTA ============ -->
+  <section class="resume-cta fade-in">
+    <div class="section-inner resume-cta-inner">
+      <h2>Want to know more about my experience?</h2>
+      <p>Get the full picture — education, projects, and experience in one document.</p>
+      <a href="assets/Pratyush-Mishra-Resume.pdf" download class="btn btn-primary">Download Resume</a>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact">
+    <div class="section-inner">
+      <p class="section-eyebrow mono">07 · Contact</p>
+      <h2 class="section-title fade-in">Let's build something together.</h2>
+
+      <div class="contact-grid">
+        <div class="contact-info fade-in">
+          <a class="contact-row" href="mailto:mishrapratyushms@gmail.com">
+            <span class="contact-label mono">Email</span>
+            <span class="contact-value">mishrapratyushms@gmail.com</span>
+          </a>
+          <a class="contact-row" href="tel:+917651899636">
+            <span class="contact-label mono">Phone</span>
+            <span class="contact-value">+91 76518 99636</span>
+          </a>
+          <a class="contact-row" href="https://www.linkedin.com/in/pratyushhhmishra/" target="_blank" rel="noopener noreferrer">
+            <span class="contact-label mono">LinkedIn</span>
+            <span class="contact-value">linkedin.com/in/pratyushhhmishra</span>
+          </a>
+          <a class="contact-row" href="https://github.com/mishrapratyushms" target="_blank" rel="noopener noreferrer">
+            <span class="contact-label mono">GitHub</span>
+            <span class="contact-value">github.com/mishrapratyushms</span>
+          </a>
+        </div>
+
+        <form class="contact-form fade-in" id="contactForm">
+          <p class="form-note">This form is a UI preview only — it isn't connected to an email service yet. Please reach out directly via email for now.</p>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+
+          <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <a href="#home" class="nav-logo">PM<span class="dot">.</span></a>
+      <p class="footer-tagline">Full-stack developer, real-time systems, and lifelong builder.</p>
+    </div>
+
+    <div class="footer-socials">
+      <a href="https://github.com/mishrapratyushms" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">GitHub</a>
+      <a href="https://www.linkedin.com/in/pratyushhhmishra/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">LinkedIn</a>
+      <a href="mailto:mishrapratyushms@gmail.com" aria-label="Send email">Email</a>
+    </div>
+
+    <p class="footer-copy mono">© <span id="year"></span> Pratyush Mishra. All rights reserved.</p>
+  </div>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
